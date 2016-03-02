@@ -1,0 +1,32 @@
+<diagram program="umletino" version="14.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>70</x><y>140</y><w>210</w><h>190</h></coordinates><panel_attributes>:Game
+--
+money
+
+--
+/customDeal()/
+NewGame()
+getMoney()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>380</y><w>210</w><h>190</h></coordinates><panel_attributes>:Card
+--
+value
+suit
+--
+getSuit
+getValue
+toString</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>370</y><w>210</w><h>190</h></coordinates><panel_attributes>:Deck
+--
+/+AbstractOperation()/
+--
+shuffle()
+size()
+getCard()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>660</y><w>210</w><h>190</h></coordinates><panel_attributes>:Money
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element></diagram>
