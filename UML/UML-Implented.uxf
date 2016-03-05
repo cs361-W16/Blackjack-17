@@ -1,0 +1,67 @@
+<diagram program="umletino" version="14.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>200</x><y>18</y><w>170</w><h>150</h></coordinates><panel_attributes>*Game*
+--
+money
+players
+--
+/customDeal()/
+NewGame()
+getMoney()
+--
+Responsibilities:
+- I exist. therefore you 21.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>618</y><w>170</w><h>140</h></coordinates><panel_attributes>*Card*
+--
+value
+suit
+--
+getSuit
+getValue
+toString
+--
+Responsibilites:
+- </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>618</y><w>160</w><h>140</h></coordinates><panel_attributes>*Deck*
+--
+size
+--
+shuffle()
+size()
+getCard()
+--
+Responsibilities:
+-  Keeps the Deck
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>778</y><w>110</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*Suit*
+--
+Spades
+Hearts
+Diamonds
+Clubs</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>448</y><w>170</w><h>150</h></coordinates><panel_attributes>*Player*
+--
+handDealt
+splitDealt
+money
+--
+getHand()
+--
+Responsibilities:
+- Deals with player's assets.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>458</y><w>190</w><h>130</h></coordinates><panel_attributes>*Dealer*
+--
+handsDealt
+--
+getHand()
+--
+Responsibilities:
+- Whole reason for it's existance
+   is so that you can lose.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>178</y><w>280</w><h>260</h></coordinates><panel_attributes>/&lt;&lt;abs&gt;&gt;/
+*/Hands/*
+--
+canDeal
+canSplit
+canHit
+canDouble
+isBlackJack
+--
+hit()
+double()
+split()
+stay()
+/fold()
