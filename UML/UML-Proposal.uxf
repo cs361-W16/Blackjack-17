@@ -28,26 +28,25 @@ getCard()
 --
 Responsibilities:
 -  Keeps the Deck
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>618</y><w>120</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>678</y><w>120</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 *Suit*
 --
 Spades
 Hearts
 Diamonds
-Clubs</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>578</y><w>170</w><h>140</h></coordinates><panel_attributes>*Player*
+Clubs</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>448</y><w>190</w><h>150</h></coordinates><panel_attributes>&lt;&lt;SuperClass&gt;&gt;
+*Player*
 --
-handDealt
-splitDealt
-money
+
 --
 getHand()
 --
 Responsibilities:
-- Deals with player's assets.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>578</y><w>130</w><h>140</h></coordinates><panel_attributes>*Dealer*
+- Deals with player's assets.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>390</x><y>678</y><w>130</w><h>140</h></coordinates><panel_attributes>*Dealer*
 --
 handsDealt
 --
-getHand()
+
 --
 Responsibilities:
 - Whole reason for
