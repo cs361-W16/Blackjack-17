@@ -1,4 +1,4 @@
-<diagram program="umletino" version="14.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>28</y><w>150</w><h>150</h></coordinates><panel_attributes>*Game*
+<diagram program="umletino" version="14.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>10</x><y>98</y><w>150</w><h>150</h></coordinates><panel_attributes>*Game*
 --
 money
 players
@@ -8,7 +8,7 @@ NewGame()
 getMoney()
 --
 Responsibilities:
-- I exist. therefore you 21.</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>0</x><y>418</y><w>150</w><h>150</h></coordinates><panel_attributes>*Card*
+- I exist. therefore you 21.</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>290</x><y>498</y><w>150</w><h>150</h></coordinates><panel_attributes>*Card*
 --
 value
 suit
@@ -18,7 +18,7 @@ getValue
 toString
 --
 Responsibilites:
-- returns the card</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>0</x><y>228</y><w>150</w><h>140</h></coordinates><panel_attributes>*Deck*
+- returns the card</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>30</x><y>488</y><w>150</w><h>140</h></coordinates><panel_attributes>*Deck*
 --
 size
 --
@@ -28,13 +28,13 @@ getCard()
 --
 Responsibilities:
 -  Keeps the Deck
-</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>20</x><y>678</y><w>120</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>540</x><y>528</y><w>120</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
 *Suit*
 --
 Spades
 Hearts
 Diamonds
-Clubs</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>280</x><y>448</y><w>190</w><h>150</h></coordinates><panel_attributes>&lt;&lt;SuperClass&gt;&gt;
+Clubs</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>580</x><y>98</y><w>190</w><h>150</h></coordinates><panel_attributes>&lt;&lt;SuperClass&gt;&gt;
 *Player*
 --
 
@@ -42,7 +42,7 @@ Clubs</panel_attributes><additional_attributes/></element><element><id>UMLClass<
 getHand()
 --
 Responsibilities:
-- Deals with player's assets.</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>390</x><y>678</y><w>130</w><h>140</h></coordinates><panel_attributes>*Dealer*
+- Deals with player's assets.</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>690</x><y>318</y><w>130</w><h>140</h></coordinates><panel_attributes>*Dealer*
 --
 handsDealt
 --
@@ -51,7 +51,7 @@ handsDealt
 Responsibilities:
 - Whole reason for
   its existence is so
-   that you can lose.</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>260</x><y>98</y><w>260</w><h>290</h></coordinates><panel_attributes>/&lt;&lt;abs&gt;&gt;/
+   that you can lose.</panel_attributes><additional_attributes/></element><element><id>UMLClass</id><coordinates><x>230</x><y>98</y><w>260</w><h>290</h></coordinates><panel_attributes>/&lt;&lt;abs&gt;&gt;/
 */Hands/*
 --
 handValue
@@ -70,17 +70,17 @@ stay()
 Responsibilities:
 - Checks status of the player's current hands.
 - Carries out the game play
-  (Hit. Double Down, Split, stay, fold)</panel_attributes><additional_attributes/></element><element><id>Relation</id><coordinates><x>66</x><y>360</y><w>60</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
-m1=1..52</panel_attributes><additional_attributes>14;10;14;60</additional_attributes></element><element><id>Relation</id><coordinates><x>66</x><y>560</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=-&gt;
-contains</panel_attributes><additional_attributes>14;10;14;120</additional_attributes></element><element><id>Relation</id><coordinates><x>136</x><y>110</y><w>150</w><h>80</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+  (Hit. Double Down, Split, stay, fold)</panel_attributes><additional_attributes/></element><element><id>Relation</id><coordinates><x>166</x><y>540</y><w>140</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+m1=1..52</panel_attributes><additional_attributes>14;10;124;10</additional_attributes></element><element><id>Relation</id><coordinates><x>426</x><y>530</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-&gt;
+contains</panel_attributes><additional_attributes>14;20;114;20</additional_attributes></element><element><id>Relation</id><coordinates><x>146</x><y>130</y><w>110</w><h>80</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
 
 
 extends
-</panel_attributes><additional_attributes>124;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>296</x><y>590</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=-&gt;&gt;
-</panel_attributes><additional_attributes>14;90;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>366</x><y>380</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;&gt;&gt;
+</panel_attributes><additional_attributes>84;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>596</x><y>240</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=-&gt;&gt;
+</panel_attributes><additional_attributes>14;80;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>476</x><y>110</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;&gt;&gt;
 m1= 1..n
-m2=1..n</panel_attributes><additional_attributes>14;70;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>136</x><y>380</y><w>150</w><h>110</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
-m1= 1..52</panel_attributes><additional_attributes>10;90;124;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>678</y><w>130</w><h>150</h></coordinates><panel_attributes>*User*
+m2=1..n</panel_attributes><additional_attributes>104;10;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>346</x><y>380</y><w>60</w><h>140</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1= 1..52</panel_attributes><additional_attributes>10;120;14;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>318</y><w>130</w><h>150</h></coordinates><panel_attributes>*User*
 --
 handDealt
 splitDealt
@@ -90,6 +90,6 @@ money
 --
 Responsibilities:
 - Count cards
-- Lose Money</panel_attributes><additional_attributes/></element><element><id>Relation</id><coordinates><x>436</x><y>590</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=-&gt;&gt;
-</panel_attributes><additional_attributes>14;90;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>56</x><y>170</y><w>50</w><h>80</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
-m1= 1..n</panel_attributes><additional_attributes>10;60;14;10</additional_attributes></element></diagram>
+- Lose Money</panel_attributes><additional_attributes/></element><element><id>Relation</id><coordinates><x>736</x><y>240</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=-&gt;&gt;
+</panel_attributes><additional_attributes>14;80;14;10</additional_attributes></element><element><id>Relation</id><coordinates><x>86</x><y>240</y><w>50</w><h>270</h></coordinates><panel_attributes>lt=-&gt;&gt;&gt;
+m1= 1..n</panel_attributes><additional_attributes>10;250;14;10</additional_attributes></element></diagram>
