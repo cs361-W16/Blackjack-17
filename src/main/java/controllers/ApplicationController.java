@@ -47,15 +47,20 @@ public class ApplicationController {
     }
 
     public Result dealPost(Context context, Game g) {
-        g.deal(g.user);
-        g.deal(g.dealer);
-        g.deal(g.user);
-        g.deal(g.dealer);
+        if(g.isActive()==false) {
+            g.newHand();
+            g.deal(g.user);
+            g.deal(g.dealer);
+            g.deal(g.user);
+            g.deal(g.dealer);
+        }
         return Results.json().render(g);
     }
 
     public Result Hit(Context context, Game g){
-        g.deal(g.user);
+        if(g.isActive() && g.user.sum<22) {
+            g.deal(g.user);
+        }
         return Results.json().render(g);
     }
 
@@ -63,6 +68,14 @@ public class ApplicationController {
 
         while(g.dealer.willHit()){
             g.deal(g.dealer);
+        }
+        g.WhoWins();
+        return Results.json().render(g);
+    }
+
+    public Result Double(Context context, Game g){
+        if(g.isActive()) {
+            g.doubleDown();
         }
         return Results.json().render(g);
     }

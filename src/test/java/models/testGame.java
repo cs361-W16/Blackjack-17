@@ -50,19 +50,50 @@ public class testGame {
         g.newHand();
         g.customDeal(g.user,0);
         g.customDeal(g.dealer,3);
-        assertEquals("dealer",g.getWinner());
+        g.WhoWins();
+        assertEquals("dealer",g.winner);
         g.newHand();
         g.customDeal(g.user,3);
         g.customDeal(g.dealer,0);
-        assertEquals("user",g.getWinner());
+        g.WhoWins();
+        assertEquals("user",g.winner);
         g.newHand();
         g.customDeal(g.user,0);
         g.customDeal(g.dealer,0);
-        assertEquals("tie",g.getWinner());
+        g.WhoWins();
+        assertEquals("tie",g.winner);
 
         g.newHand();
         g.dealer.hand.add(new Card(15,Suit.Clubs));
         assertEquals(0,g.dealer.hand.get(0).getValue());
+    }
+
+    @Test
+    public void testAceChange(){
+        Game g = new Game();
+        g.buildDeck();
+        g.newHand();
+
+        g.deal(g.dealer);
+        assertEquals(11,g.dealer.sum);
+        g.deal(g.dealer);
+        assertEquals(12,g.dealer.sum);
+        g.deal(g.dealer);
+        assertEquals(13,g.dealer.sum);
+        g.deal(g.dealer);
+        assertEquals(14,g.dealer.sum);
+
+    }
+
+    @Test
+    public void testDoubleDown(){
+        Game g = new Game();
+        g.buildDeck();
+        g.newHand();
+        assertEquals(true,g.isActive());
+        g.doubleDown();
+        assertEquals(96,g.user.dough);
+
     }
 
 }
