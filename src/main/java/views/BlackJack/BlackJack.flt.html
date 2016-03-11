@@ -6,6 +6,127 @@
 </head>
 <body>
 
+<link href="/assets/css/custom.css" rel="stylesheet">
+<script type="text/javascript" src="/assets/webjars/jquery/2.1.3/jquery.js"></script>
+
+<header></header>
+<div id="chest">Booty<br><br><div id="booty"></div><br><br><div id="winner"></div></div>
+<table class="board">
+    <tr>
+        <td colspan="2">Dealer's Hand</td>
+    </tr>
+    <tr>
+        <td rowspan="2" id="filler"></td>
+        <td id="dealer" class="hand"></td>
+    </tr>
+    <tr>
+        <td id="user" class="hand"></td>
+    </tr>
+    <tr><td colspan="2">Your Hand</td></tr>
+</table>
+
+<footer id="menu"><table><tr>
+    <td><button id="howTo">How to Play</button></td>
+    <td><button id="split">Split</button></td>
+    <td><button id="hit">HIT!</button></td>
+    <td><button id="stay">STAY!</button></td>
+    <td><button id="doubledown">Double Down</button></td>
+    <td><button id="dealButton">Deal New Hand</button></td>
+</tr></table>
+</footer>
+<script>
+
+var game;
+
+function display(game) {
+    console.log(game);
+    $( '.hand' ).html("");
+
+    $.each(game.dealer.hand, function( key, val ) {
+        if(key==1 && !game.winner){
+        $( '#dealer' ).append("<img src='assets/cards/Back.png' alt=nothing class=cardLocation>");
+        }
+        else{
+            $( '#dealer' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+        }
+    });
+
+    $.each(game.user.hand, function( key, val ) {
+        $( '#user' ).append("<img src='assets/cards/"+val.suit+val.value+".png' alt=nothing class=cardLocation>");
+    });
+
+    $('#booty').html("$"+game.user.dough);
+
+    if(game.winner){
+        $('#winner').html("Winner:<br>"+game.winner+"!");
+    }
+    else{
+        $('#winner').html("");
+    }
+
+}
+
+$.getJSON("http://localhost:8080/game", function( data ) {
+    display(data);
+    game = data;
+});
+
+
+$("#dealButton").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "/dealGame",
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
+});
+
+$("#hit").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "/hit",
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
+});
+
+$("#stay").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "/stay",
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
+});
+
+$("#doubledown").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "/dbldwn",
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
+});
+
+</script>
+
+
 
 </body>
 </html>

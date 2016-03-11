@@ -1,3 +1,115 @@
-/* Add additional stylesheets below
--------------------------------------------------- */
+#filler {
+    width: 600px;
+}
 
+header {
+    height: 100px;
+    width: 600px;
+    background-image: url("../header.png");
+    margin: auto;
+}
+
+#chest {
+    font-size: 2em;
+    text-align: center;
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    right: 10px;
+    background-size: 200px;
+    background-image: url("../treasure-chest.png");
+    background-repeat: no-repeat;
+}
+
+#booty {
+}
+
+.hand {
+    text-align: left;
+    height: 250px;
+    width: 600px;
+}
+
+.title{
+    font-weight: bold;
+}
+
+.cardLocation{
+    display: inline;
+    position: relative;
+    margin-left: -80px;
+    /*background-color:#F0F0F0;*/
+}
+
+#menu{
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    //color: darkgreen;
+    width 100%;
+    //background-color: #FF8080;
+}
+
+#menu td {
+    text-align:center;
+    width: 15%
+}
+
+//#dealbutton{
+//float: right;
+//}
+
+h1{
+    text-align:center;
+    font-size:450%;
+    margin: 20px 0px 20px 0px;
+}
+
+table{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#101010;
+}
+
+body{
+    background-size:cover;
+    background-image: url("../cards/felt.png");
+    margin: 0px;
+    color:white;
+}
+
+button{
+	-moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	box-shadow:inset 0px 1px 0px 0px #a6827e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8c6c4c), color-stop(1, #7a5e41));
+	background:-moz-linear-gradient(top, #8c6c4c 5%, #7a5e41 100%);
+	background:-webkit-linear-gradient(top, #8c6c4c 5%, #7a5e41 100%);
+	background:-o-linear-gradient(top, #8c6c4c 5%, #7a5e41 100%);
+	background:-ms-linear-gradient(top, #8c6c4c 5%, #7a5e41 100%);
+	background:linear-gradient(to bottom, #8c6c4c 5%, #7a5e41 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8c6c4c', endColorstr='#7a5e41',GradientType=0);
+	background-color:#8c6c4c;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #54381e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+}
