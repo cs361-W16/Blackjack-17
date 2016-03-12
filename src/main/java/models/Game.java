@@ -15,6 +15,7 @@ public class Game {
     public Player dealer = new Dealer();
     public String winner;
     private boolean active;
+    private boolean sphand;
     public int bet;
 
     public Game(){
@@ -23,6 +24,10 @@ public class Game {
 
     public boolean isActive(){
         return active;
+    }
+
+    public boolean canSplit() {
+        return sphand;
     }
 
     public void newHand(){
@@ -64,6 +69,10 @@ public class Game {
                 p.sum -= 10;
             }
         }
+        if (p.hand.size() == 2)
+            if (p.hand.get(0).getValue() == p.hand.get(1).getValue()) {
+                sphand=true;
+        }
     }
 
     public void doubleDown(){
@@ -82,13 +91,13 @@ public class Game {
     public void WhoWins(){
         active = false;
         if((user.sum>dealer.sum || dealer.sum>22)&&user.sum<22) {
-            winner = "user";
+            winner = "USER";
             user.dough=user.dough+(2*bet);
         }
         else if((user.sum<dealer.sum || user.sum>22)&& dealer.sum<22)
-            winner = "dealer";
+            winner = "DEALER";
         else{
-            winner = "tie";
+            winner = "TIE";
             user.dough+=bet;
         }
     }

@@ -79,4 +79,12 @@ public class ApplicationController {
         }
         return Results.json().render(g);
     }
+
+/*    public Result Split(Context context, Game g){
+        if(g.canSplit()==true) {
+            g.deal(g.user);
+            g.deal(g.user2);
+        }
+        return Results.json().render(g);
+    }*/
 }
