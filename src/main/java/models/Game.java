@@ -17,6 +17,7 @@ public class Game {
     public String winner;
     private boolean active;
     private boolean sphand;
+    private boolean doubled;
     public int bet;
 
     public Game(){
@@ -31,6 +32,10 @@ public class Game {
         return sphand;
     }
 
+    public boolean canDouble() {
+        return doubled;
+    }
+
     public void newHand(){
         winner = "";
         bet = 2;
@@ -41,6 +46,7 @@ public class Game {
         dealer.sum = 0;
         user.dough -= bet;
         active = true;
+        doubled = false;
     }
 
     public void buildDeck() {
@@ -71,21 +77,22 @@ public class Game {
                 p.sum -= 10;
             }
         }
-/*        if (p.hand.size() == 1) {
+        if (p.hand.size() == 2) {
             if (p.hand.get(0).getValue() == p.hand.get(1).getValue()) {
                 sphand=true;
             }
-        }*/
+        }
     }
 
-/*    public void splithand(Player p) {
+    public void splithand(Player p) {
         Player p2 = new User();
         p2.hand.set(0, p.hand.get(1));
         p.hand.remove(1);
-    }*/
+    }
 
 
     public void doubleDown(){
+        doubled=true;
         if(bet<4) {
             user.dough -= bet;
             bet += bet;
@@ -100,11 +107,11 @@ public class Game {
 
     public void WhoWins(){
         active = false;
-        if((user.sum>dealer.sum || dealer.sum>22)&&user.sum<22) {
+        if((user.sum>dealer.sum || dealer.sum>21)&&user.sum<22) {
             winner = "USER";
             user.dough=user.dough+(2*bet);
         }
-        else if((user.sum<dealer.sum || user.sum>22)&& dealer.sum<22)
+        else if((user.sum<dealer.sum || user.sum>21)&& dealer.sum<22)
             winner = "DEALER";
         else{
             winner = "TIE";
