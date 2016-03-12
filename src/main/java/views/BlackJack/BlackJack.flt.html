@@ -13,7 +13,7 @@
 <div id="chest">Booty<br><br><div id="booty"></div><br><br><div id="winner"></div></div>
 <table class="board">
     <tr>
-        <td colspan="2">Dealer's Hand</td>
+        <td colspan="2"><h3>Dealer's Hand: <span id="dscore">0</span></h3></td>
     </tr>
     <tr>
         <td rowspan="2" id="filler"></td>
@@ -22,11 +22,18 @@
     <tr>
         <td id="user" class="hand"></td>
     </tr>
-    <tr><td colspan="2">Your Hand</td></tr>
+    <tr>
+        <td colspan="2">
+            <h3>Your Hand: <span id="uscore"></span></h3>
+        </td>
+        <!--<td colspan="2">
+            <h3>Split Hand: <span id="uscore2"></span></h3>
+        </td>-->
+    </tr>
 </table>
 
 <footer id="menu"><table><tr>
-    <td><button id="howTo">How to Play</button></td>
+    <td><button id="howTo">How To Play</button></td>
     <td><button id="split">Split</button></td>
     <td><button id="hit">HIT!</button></td>
     <td><button id="stay">STAY!</button></td>
@@ -57,8 +64,11 @@ function display(game) {
 
     $('#booty').html("$"+game.user.dough);
 
+    $('#uscore').html(game.user.sum);
+
     if(game.winner){
         $('#winner').html("Winner:<br>"+game.winner+"!");
+        $('#dscore').html(game.dealer.sum);
     }
     else{
         $('#winner').html("");
@@ -83,6 +93,7 @@ $("#dealButton").click(function(){
         contentType:"application/json; charset=utf-8",
         dataType:"json",
     });
+    $('#dscore').html("0");
 });
 
 $("#hit").click(function(){
@@ -124,6 +135,28 @@ $("#doubledown").click(function(){
     });
 });
 
+<!--$("#split").click(function(){
+    $.ajax({
+        type: "POST",
+        url: "/split",
+        data: JSON.stringify(game),
+        success: function(data, status){console.log("Data: " + data + "\nStatus: " + status);
+            game = data;
+            display(data);},
+        contentType:"application/json; charset=utf-8",
+        dataType:"json",
+    });
+    $('#uscore2').html(game.user.sum);
+
+});-->
+
+$("#howTo").click(function(){
+    $(".howtoplay").toggleClass("display");
+});
+
+$("#credit").click(function() {
+   $(".credit").toggleClass("display");
+});
 </script>
 
 

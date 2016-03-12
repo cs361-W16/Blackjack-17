@@ -61,6 +61,9 @@ public class ApplicationController {
         if(g.isActive() && g.user.sum<22) {
             g.deal(g.user);
         }
+        else if (g.isActive() && g.user.sum>=21) {
+            EndTurn(context, g);
+        }
         return Results.json().render(g);
     }
 
@@ -79,4 +82,13 @@ public class ApplicationController {
         }
         return Results.json().render(g);
     }
+
+/*    public Result user2(Context context, Game g){
+        if(g.canSplit()) {
+            g.splithand(g.user);
+        }
+        g.deal(g.user);
+        g.deal(g.p2);
+        return Results.json().render(g);
+    }*/
 }

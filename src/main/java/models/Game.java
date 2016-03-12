@@ -12,9 +12,11 @@ public class Game {
     public java.util.List<Card> deck = new ArrayList<>();
 
     public Player user = new User();
+    public Player p2 = new User();
     public Player dealer = new Dealer();
     public String winner;
     private boolean active;
+    private boolean sphand;
     public int bet;
 
     public Game(){
@@ -25,10 +27,15 @@ public class Game {
         return active;
     }
 
+    public boolean canSplit() {
+        return sphand;
+    }
+
     public void newHand(){
         winner = "";
         bet = 2;
         user.hand.clear();
+        p2.hand.clear();
         user.sum = 0;
         dealer.hand.clear();
         dealer.sum = 0;
@@ -64,7 +71,19 @@ public class Game {
                 p.sum -= 10;
             }
         }
+/*        if (p.hand.size() == 1) {
+            if (p.hand.get(0).getValue() == p.hand.get(1).getValue()) {
+                sphand=true;
+            }
+        }*/
     }
+
+/*    public void splithand(Player p) {
+        Player p2 = new User();
+        p2.hand.set(0, p.hand.get(1));
+        p.hand.remove(1);
+    }*/
+
 
     public void doubleDown(){
         if(bet<4) {
@@ -82,15 +101,16 @@ public class Game {
     public void WhoWins(){
         active = false;
         if((user.sum>dealer.sum || dealer.sum>22)&&user.sum<22) {
-            winner = "user";
+            winner = "USER";
             user.dough=user.dough+(2*bet);
         }
         else if((user.sum<dealer.sum || user.sum>22)&& dealer.sum<22)
-            winner = "dealer";
+            winner = "DEALER";
         else{
-            winner = "tie";
+            winner = "TIE";
             user.dough+=bet;
         }
+
     }
 
 }

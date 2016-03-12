@@ -41,6 +41,11 @@ header {
     /*background-color:#F0F0F0;*/
 }
 
+.scoreLocation{
+    display: inline;
+    position: relative;
+}
+
 #menu{
     width: 100%;
     text-align: center;
@@ -55,14 +60,17 @@ header {
     width: 15%
 }
 
-//#dealbutton{
-//float: right;
-//}
 
 h1{
     text-align:center;
     font-size:450%;
     margin: 20px 0px 20px 0px;
+}
+
+h3{
+    font-family:Arial;
+    font-size: 200%;
+
 }
 
 table{

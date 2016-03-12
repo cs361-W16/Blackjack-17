@@ -11,7 +11,10 @@ public class User extends Player {
     }
 
     public boolean willHit(){
-        return true;
-    };
+        if(sum>=21)
+            return false;
+        else
+            return true;
+    }
 
 }
