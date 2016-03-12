@@ -51,17 +51,17 @@ public class testGame {
         g.customDeal(g.user,0);
         g.customDeal(g.dealer,3);
         g.WhoWins();
-        assertEquals("dealer",g.winner);
+        assertEquals("DEALER",g.winner);
         g.newHand();
         g.customDeal(g.user,3);
         g.customDeal(g.dealer,0);
         g.WhoWins();
-        assertEquals("user",g.winner);
+        assertEquals("USER",g.winner);
         g.newHand();
         g.customDeal(g.user,0);
         g.customDeal(g.dealer,0);
         g.WhoWins();
-        assertEquals("tie",g.winner);
+        assertEquals("TIE",g.winner);
 
         g.newHand();
         g.dealer.hand.add(new Card(15,Suit.Clubs));

@@ -27,6 +27,9 @@
         <td colspan="2">
             <h3>Your Hand: <span id="uscore"></span></h3>
         </td>
+        <td colspan="2">
+            <h3>Split Hand: <span id="uscore2"></span></h3>
+        </td>
     </tr>
 </table>
 
@@ -133,7 +136,7 @@ $("#doubledown").click(function(){
     });
 });
 
-$("#split").click(function(){
+<!--$("#split").click(function(){
     $.ajax({
         type: "POST",
         url: "/split",
@@ -144,7 +147,9 @@ $("#split").click(function(){
         contentType:"application/json; charset=utf-8",
         dataType:"json",
     });
-});
+    $('#uscore2').html(game.user.sum);
+
+});-->
 
 $("#howTo").click(function(){
     $(".howtoplay").toggleClass("display");
